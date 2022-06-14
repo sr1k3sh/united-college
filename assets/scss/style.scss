@@ -1,0 +1,10 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+body{
+    background-color: #FFF5EE;
+}
+@import './variable.scss';
+@import './templates/table';
+@import './templates/tab-content';
+@import './templates/nav-content';
+@import './templates/global';
+@import './templates/banner';

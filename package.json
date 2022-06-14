@@ -1,0 +1,24 @@
+{
+  "name": "united",
+  "version": "1.0.0",
+  "description": "united college project",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build:sass": "sass --no-source-map assets/scss:../united",
+    "watch:sass": "sass --watch assets/scss:../united",
+    "watch": "npm-run-all --parallel watch:*",
+    "start": "npm-run-all --parallel watch",
+    "build": "npm-run-all build:*"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "bootstrap": "^5.1.3",
+    "cssnano": "^5.0.17",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.8"
+  }
+}

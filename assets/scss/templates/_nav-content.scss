@@ -1,0 +1,20 @@
+.nav{
+    &.nav-tabs{
+        & .nav-link{
+            font-weight: 600;
+            color: #8d8d8d;
+            &.active{
+                color: $maincolor;
+                &:hover{
+                    border-bottom: 0;
+                    border-color: #e9ecef #e9ecef #dee2e6;
+                    border-bottom-color: transparent;
+                }
+            }
+
+            &:hover{
+                border-color: #8812154d #8812154d #dee2e6;
+            }
+        }
+    }
+}

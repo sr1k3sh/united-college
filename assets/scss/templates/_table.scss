@@ -1,0 +1,131 @@
+// table{
+//     border-collapse: collapse;
+//     width: 100%;
+//     & td, th {
+//         border: 1px solid #dddddd;
+//         text-align: left;
+//         padding: 16px;
+//     }
+
+//     & td{
+//         & h1{
+//             color: $maincolor;
+//             @include font-size(2rem);
+//         }
+
+//         & address{
+//             margin-bottom: 0;
+//         }
+//     }
+// }
+
+.ua-table{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    &__item{
+        display: flex;
+        list-style: none;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        box-shadow: 1px 0px 6px 0px #FFF5EE;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        border: 1px solid #dee2e6;
+    }
+
+    &__article{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1.5rem 1rem;
+        row-gap: 1rem;
+        flex-direction: column;
+        @include media-breakpoint-up(sm){
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
+    &__rank{
+        width: 50px;
+        @include media-breakpoint-up(md){
+            width: 80px;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & span{
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+
+    &__img-wrapper{
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: #FFF5EE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        margin-right: 12px;
+    }
+    &__img{
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+    }
+
+    &__college-wrapper{
+        display: flex;
+        flex-direction: column;
+        @include media-breakpoint-up(md){
+            flex-direction: row;
+            align-items: center;
+            width: calc(100% - 200px);
+        }
+        margin-bottom: 0;
+    }
+
+    &__college-detail{
+        h1{
+            color: $maincolor;
+            @include font-size(2rem);
+        }
+        address{
+            margin-bottom: 0;
+            @include font-size(1rem);
+        }
+    }
+
+    &__score{
+        width: 50px;
+        @include media-breakpoint-up(md){
+            width: 80px;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & span{
+            padding: 4px 1rem;
+            background: seashell;
+            border-radius: 4px;
+            color: $maincolor;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+    }
+}
