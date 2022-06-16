@@ -11,3 +11,225 @@
         }
     }
 }
+
+.ua-header{
+    $self: &;
+    &__table-outer{
+        box-shadow: 2px 2px 4px #cccccc45
+    }
+    &__table{
+        max-width: 600px;
+        overflow: auto;
+        @include media-breakpoint-up(sm){
+            max-width: 100%;
+        }
+        & table{
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 6px;
+            & td, th {
+                // border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            & thead{
+                tr{
+                    background-color: $altmain;
+                    & th{
+                        padding: 12px 16px;
+                        color: $white;
+                        text-align: center;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            & tbody{
+                tr{
+                    transition: 0.3s;
+                    cursor: pointer;
+                    &:nth-child(odd){
+                        background-color: #fcf9ff;
+                    }
+                    &:hover{
+                        background-color: $altmain;
+                        #{$self}__college-name{
+                            span{
+                                color: $white;
+                            }
+                        }
+                        #{$self}__std-count{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            tr{
+                & td{
+                    &:first-child{
+                        text-align: center;
+                    }
+                }
+
+            }
+
+            & td{
+                & h1{
+                    color: $maincolor;
+                    @include font-size(2rem);
+                }
+
+                & address{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        th:first-child {
+            -moz-border-radius: 6px 0 0 0;
+            -webkit-border-radius: 6px 0 0 0;
+            border-radius: 6px 0 0 0;
+        }
+        th:last-child {
+            -moz-border-radius: 0 6px 0 0;
+            -webkit-border-radius: 0 6px 0 0;
+            border-radius: 0 6px 0 0;
+        }
+        th:only-child{
+            -moz-border-radius: 6px 6px 0 0;
+            -webkit-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+        }
+        tr:last-child td:first-child {
+            -moz-border-radius: 0 0 0 6px;
+            -webkit-border-radius: 0 0 0 6px;
+            border-radius: 0 0 0 6px;
+        }
+        tr:last-child td:last-child {
+            -moz-border-radius: 0 0 6px 0;
+            -webkit-border-radius: 0 0 6px 0;
+            border-radius: 0 0 6px 0;
+        }
+
+    }
+
+    &__title-wrapper{
+        & h2{
+            margin-bottom: 0;
+        }
+        margin-bottom: 1.5rem;
+    }
+
+    &__rank-count{
+        @include font-size(32px);
+        font-weight: 700;
+        &--green{
+            color: $success;
+        }
+
+        &--neutral{
+            color: $gray-900;
+        }
+
+        &--poor{
+            color: $danger;
+        }
+    }
+
+    &__table-star{
+        &--5{
+            svg{
+                &:nth-child(-n+5){
+                    fill:$warning;
+                    path{
+                    }
+                }
+            }
+        }
+        &--4{
+            svg{
+                &:nth-child(-n+4){
+                    fill: $warning;
+                    path{
+                    }
+                }
+            }
+        }
+        &--3{
+            svg{
+                &:nth-child(-n+3){
+                    fill: $warning;
+                    path{
+                    }
+                }
+            }
+        }
+
+        &--2{
+            svg{
+                &:nth-child(-n+2){
+                    fill: $warning;
+                    path{
+                    }
+                }
+            }
+        }
+
+        &--1{
+            svg{
+                &:nth-child(-n+1){
+                    fill: $warning;
+                    path{
+                    }
+                }
+            }
+        }
+        & svg{
+            width: 16px;
+            height: 16px;
+            fill: $gray-500;
+        }
+    }
+
+    &__college-name{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        & img{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+        & span{
+            font-size: 14px;
+            color: $black;
+            width: calc(100% - 32px - 8px);
+            min-width: 300px;
+        }
+    }
+
+    &__status{
+        font-size: 14px;
+        font-weight: 400;
+        &--green{
+            color: $success;
+        }
+
+        &--neutral{
+            color: $gray-900;
+        }
+
+        &--poor{
+            color: $danger;
+        }
+    }
+
+    &__min-width{
+        min-width: 180px;
+    }
+}
