@@ -10352,16 +10352,94 @@ body {
 .ua-header__top-3 {
   margin-bottom: 24px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .ua-header__top-3 {
+    flex-direction: row;
+  }
 }
 .ua-header__article {
   display: flex;
   flex-direction: column;
-  width: calc(33.3333333333% - 24px);
-  border: 1px solid #1a0076;
+  width: 100%;
+  min-height: 170px;
+  justify-content: space-between;
+  border: 1px solid #fcf9ff;
   padding: 12px 16px;
   border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -1px 0px 4px rgba(204, 204, 204, 0.2705882353);
+}
+@media (min-width: 768px) {
+  .ua-header__article {
+    width: calc(33.3333333333% - 24px);
+  }
+}
+.ua-header__article::before {
+  content: "";
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  background-color: #feb200;
+}
+.ua-header__article::after {
+  content: "1";
+  position: absolute;
+  font-size: 11rem;
+  color: #fff8e8;
+  right: 11%;
+  top: 0;
+  line-height: 1;
+  z-index: -1;
+  font-weight: bold;
+}
+.ua-header__article .ua-header__badge {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #feb200;
+  border-radius: 0 6px;
+  padding: 8px;
+}
+.ua-header__article .ua-header__badge svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+.ua-header__article--1 .ua-header__badge {
+  background-color: #feb200;
+}
+.ua-header__article--1::before {
+  background-color: #feb200;
+}
+.ua-header__article--1::after {
+  color: #fff8e8;
+}
+.ua-header__article--2 .ua-header__badge {
+  background-color: #8b8b8b;
+}
+.ua-header__article--2::before {
+  background-color: #8b8b8b;
+}
+.ua-header__article--2::after {
+  content: "2";
+  color: #efefef;
+}
+.ua-header__article--3 .ua-header__badge {
+  background-color: #c65760;
+}
+.ua-header__article--3::before {
+  background-color: #c65760;
+}
+.ua-header__article--3::after {
+  content: "3";
+  color: #ffecee;
 }
 .ua-header__article figure {
   display: flex;
@@ -10380,8 +10458,27 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
+.ua-header__article figure figcaption span {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #1a0076;
+}
 .ua-header__article figure figcaption address {
+  font-size: 12px;
+  font-weight: 300;
   margin-bottom: 0;
+  color: #495057;
+}
+.ua-header__article-content span {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #1a0076;
+}
+.ua-header__article-content p {
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #1a0076;
 }
 .ua-header__title-wrapper {
   margin-bottom: 1.5rem;
@@ -10389,9 +10486,15 @@ body {
 .ua-header__title-wrapper h2, .ua-header__title-wrapper .h2 {
   color: #1a0076;
   margin-bottom: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
 }
-.ua-header .ua-header__std-count {
+.ua-header__std-count {
   color: #1a0076;
+}
+.ua-header__std-count span {
+  font-weight: 700;
 }
 .ua-header__rank-count {
   font-size: calc(1.325rem + 0.9vw);
@@ -10466,6 +10569,65 @@ body {
 }
 .ua-header__min-width {
   min-width: 180px;
+}
+.ua-header__faculty-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+.ua-header__faculty-article {
+  display: block;
+  border: 1px solid grey;
+  padding: 8px 12px;
+  border: 1px solid #fcf9ff;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -1px 0px 4px rgba(204, 204, 204, 0.2705882353);
+  transition: 0.3s;
+}
+.ua-header__faculty-article::before {
+  content: "";
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  background-color: #1a0076;
+}
+.ua-header__faculty-article figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0;
+}
+.ua-header__faculty-article figure svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.ua-header__faculty-article figure figcaption span {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.ua-header__faculty-anchor {
+  text-decoration: none;
+  color: #1a0076;
+}
+.ua-header__faculty-anchor:hover .ua-header__faculty-article {
+  transition: 0.3s;
+  background-color: #1a0076;
+}
+.ua-header__faculty-anchor:hover .ua-header__faculty-article span {
+  color: #fff;
+}
+.ua-header__faculty-anchor:hover .ua-header__faculty-article svg path {
+  fill: white;
 }
 
 /*# sourceMappingURL=style.css.map */
